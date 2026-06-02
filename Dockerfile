@@ -1,7 +1,5 @@
 FROM alibaba-cloud-linux-3-registry.cn-hangzhou.cr.aliyuncs.com/alinux3/python:3.11.1
 
-RUN dnf install -y redis && dnf clean all
-
 WORKDIR /app
 COPY pyproject.toml app.py ./
 RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ .

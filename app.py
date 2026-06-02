@@ -13,6 +13,9 @@ async def root():
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
+@app.get("/world/{name}")
+async def say_hello(name: str):
+    return {"message": f"Hello {name}"}
 
 if __name__ == "__main__":
     print("111111111111111111111111111111111")
