@@ -1,0 +1,7 @@
+services:
+  fastapi-app:
+    image: ${IMAGE_URL}
+    container_name: fastapi-app
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

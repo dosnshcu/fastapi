@@ -1,12 +1,13 @@
-FROM python:3.13-slim AS builder
+FROM registry.cn-hangzhou.aliyuncs.com/library/python:3.12-slim AS builder
 
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+# 国内环境下 uv 通过 pip 安装更稳定
+RUN pip install --no-cache-dir uv
 
 WORKDIR /app
 COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-dev
 
-FROM python:3.13-slim
+FROM registry.cn-hangzhou.aliyuncs.com/library/python:3.12-slim
 
 WORKDIR /app
 COPY --from=builder /app/.venv /app/.venv
