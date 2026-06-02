@@ -14,8 +14,8 @@ async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
 @app.get("/world/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+async def say_world(name: str):
+    return {"message": f"World {name}"}
 
 if __name__ == "__main__":
     print("111111111111111111111111111111111")
