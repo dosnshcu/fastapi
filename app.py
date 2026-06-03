@@ -22,6 +22,10 @@ async def say_world(name: str):
 async def say_helloworld(name: str):
     return {"message": f"helloworld {name}"}
 
+@app.get("/a/{name}")
+async def say_a(name: str):
+    return {"message": f"a {name}"}
+
 if __name__ == "__main__":
     print("111111111111111111111111111111111")
     uvicorn.run(app, host="127.0.0.1", port=8000)
