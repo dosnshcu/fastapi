@@ -28,7 +28,7 @@ async def say_a(name: str):
 
 @app.get("/b/{name}")
 async def say_b(name: str):
-    return {"message": f"a {name}"}
+    return {"message": f"b {name}"}
 
 if __name__ == "__main__":
     print("111111111111111111111111111111111")
