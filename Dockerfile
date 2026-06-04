@@ -4,7 +4,7 @@ WORKDIR /app
 COPY pyproject.toml app.py ./
 RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ .
 
-EXPOSE 8000 6379
+EXPOSE 8000
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
